@@ -1,0 +1,32 @@
+analysis:
+  # Minimum occurrences before an error group is reported
+  min_group_size: 2
+  # Rolling window (seconds) for rate-based anomaly detection
+  anomaly_window_seconds: 60
+  # Z-score threshold to trigger anomaly alert
+  anomaly_z_threshold: 2.5
+  # Error rate (errors/min) that triggers a HIGH alert
+  error_rate_high: 10
+  # Error rate (errors/min) that triggers a CRITICAL alert
+  error_rate_critical: 30
+
+alerts:
+  # Slack webhook — replace with real URL or set via env SLACK_WEBHOOK_URL
+  slack_webhook_url: ""
+  # PagerDuty routing key — replace or set via env PAGERDUTY_ROUTING_KEY
+  pagerduty_routing_key: ""
+  # Minimum severity to fire an alert: INFO | WARNING | HIGH | CRITICAL
+  min_severity: "HIGH"
+
+services:
+  - api-gateway
+  - auth-service
+  - payment-service
+  - inventory-service
+  - notification-service
+  - user-service
+
+log_formats:
+  # Supported: json | nginx | apache | combined
+  - json
+  - nginx

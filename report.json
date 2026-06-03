@@ -1,0 +1,363 @@
+{
+  "generated_at": "2026-06-03T17:30:37.837681Z",
+  "summary": {
+    "total_error_groups": 17,
+    "total_error_events": 84,
+    "top_failing_services": [
+      {
+        "service": "payment-service",
+        "error_count": 40
+      },
+      {
+        "service": "user-service",
+        "error_count": 29
+      },
+      {
+        "service": "inventory-service",
+        "error_count": 16
+      }
+    ]
+  },
+  "error_groups": [
+    {
+      "fingerprint": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "service": "user-service",
+      "count": 9,
+      "first_seen": "2026-06-03T17:33:11.929000+00:00",
+      "last_seen": "2026-06-03T17:35:27.437000+00:00",
+      "duration_seconds": 135.508,
+      "affected_hosts": [
+        "user-service-01",
+        "user-service-02",
+        "user-service-03"
+      ],
+      "sample_message": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Transaction deadlock \u2014 review query order and add retry logic.",
+        "runbook": "runbook/db-deadlock.md",
+        "confidence": "MEDIUM"
+      }
+    },
+    {
+      "fingerprint": "java.lang.outofmemoryerror: gc overhead limit exceeded",
+      "service": "payment-service",
+      "count": 8,
+      "first_seen": "2026-06-03T17:32:18.296000+00:00",
+      "last_seen": "2026-06-03T17:32:21.896000+00:00",
+      "duration_seconds": 3.6,
+      "affected_hosts": [
+        "payment-service-03",
+        "payment-service-01",
+        "payment-service-02"
+      ],
+      "sample_message": "java.lang.OutOfMemoryError: GC overhead limit exceeded",
+      "root_cause": {
+        "category": "MEMORY",
+        "description": "Container OOM \u2014 increase memory limits or investigate heap leak.",
+        "runbook": "runbook/oom.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "could not connect to server: connection refused (host=<host> port=<n>)",
+      "service": "user-service",
+      "count": 7,
+      "first_seen": "2026-06-03T17:33:11.029000+00:00",
+      "last_seen": "2026-06-03T17:35:30.137000+00:00",
+      "duration_seconds": 139.108,
+      "affected_hosts": [
+        "user-service-01",
+        "user-service-03",
+        "user-service-02"
+      ],
+      "sample_message": "could not connect to server: Connection refused (host=postgres-primary port=5432)",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "PostgreSQL primary is unreachable \u2014 pod or TCP listener is down.",
+        "runbook": "runbook/db-connection-refused.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "too many connections \u2014 max_connections=<n> reached",
+      "service": "payment-service",
+      "count": 7,
+      "first_seen": "2026-06-03T17:33:12.829000+00:00",
+      "last_seen": "2026-06-03T17:35:29.837000+00:00",
+      "duration_seconds": 137.008,
+      "affected_hosts": [
+        "payment-service-02",
+        "payment-service-01",
+        "payment-service-03"
+      ],
+      "sample_message": "too many connections \u2014 max_connections=100 reached",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Connection pool exhausted \u2014 services are leaking connections or pool is undersized.",
+        "runbook": "runbook/db-connection-pool.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "could not connect to server: connection refused (host=<host> port=<n>)",
+      "service": "payment-service",
+      "count": 7,
+      "first_seen": "2026-06-03T17:34:33.529000+00:00",
+      "last_seen": "2026-06-03T17:35:28.037000+00:00",
+      "duration_seconds": 54.508,
+      "affected_hosts": [
+        "payment-service-02",
+        "payment-service-01",
+        "payment-service-03"
+      ],
+      "sample_message": "could not connect to server: Connection refused (host=postgres-primary port=5432)",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "PostgreSQL primary is unreachable \u2014 pod or TCP listener is down.",
+        "runbook": "runbook/db-connection-refused.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "cannot allocate memory: fork failed",
+      "service": "payment-service",
+      "count": 6,
+      "first_seen": "2026-06-03T17:32:17.996000+00:00",
+      "last_seen": "2026-06-03T17:32:22.797000+00:00",
+      "duration_seconds": 4.801,
+      "affected_hosts": [
+        "payment-service-03",
+        "payment-service-01",
+        "payment-service-02"
+      ],
+      "sample_message": "Cannot allocate memory: fork failed",
+      "root_cause": {
+        "category": "MEMORY",
+        "description": "Container OOM \u2014 increase memory limits or investigate heap leak.",
+        "runbook": "runbook/oom.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "ssl connection has been closed unexpectedly by postgres-replica",
+      "service": "user-service",
+      "count": 6,
+      "first_seen": "2026-06-03T17:33:51.691000+00:00",
+      "last_seen": "2026-06-03T17:35:28.937000+00:00",
+      "duration_seconds": 97.246,
+      "affected_hosts": [
+        "user-service-01",
+        "user-service-02",
+        "user-service-03"
+      ],
+      "sample_message": "SSL connection has been closed unexpectedly by postgres-replica",
+      "root_cause": null
+    },
+    {
+      "fingerprint": "error: relation 'sessions' does not exist",
+      "service": "user-service",
+      "count": 5,
+      "first_seen": "2026-06-03T17:33:10.129000+00:00",
+      "last_seen": "2026-06-03T17:35:28.337000+00:00",
+      "duration_seconds": 138.208,
+      "affected_hosts": [
+        "user-service-01",
+        "user-service-02",
+        "user-service-03"
+      ],
+      "sample_message": "ERROR: relation 'sessions' does not exist",
+      "root_cause": null
+    },
+    {
+      "fingerprint": "too many connections \u2014 max_connections=<n> reached",
+      "service": "inventory-service",
+      "count": 5,
+      "first_seen": "2026-06-03T17:33:10.429000+00:00",
+      "last_seen": "2026-06-03T17:35:30.437000+00:00",
+      "duration_seconds": 140.008,
+      "affected_hosts": [
+        "inventory-service-01",
+        "inventory-service-03"
+      ],
+      "sample_message": "too many connections \u2014 max_connections=100 reached",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Connection pool exhausted \u2014 services are leaking connections or pool is undersized.",
+        "runbook": "runbook/db-connection-pool.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "service": "payment-service",
+      "count": 5,
+      "first_seen": "2026-06-03T17:33:12.229000+00:00",
+      "last_seen": "2026-06-03T17:35:26.537000+00:00",
+      "duration_seconds": 134.308,
+      "affected_hosts": [
+        "payment-service-03",
+        "payment-service-02",
+        "payment-service-01"
+      ],
+      "sample_message": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Transaction deadlock \u2014 review query order and add retry logic.",
+        "runbook": "runbook/db-deadlock.md",
+        "confidence": "MEDIUM"
+      }
+    },
+    {
+      "fingerprint": "ssl connection has been closed unexpectedly by postgres-replica",
+      "service": "inventory-service",
+      "count": 4,
+      "first_seen": "2026-06-03T17:33:10.729000+00:00",
+      "last_seen": "2026-06-03T17:34:38.329000+00:00",
+      "duration_seconds": 87.6,
+      "affected_hosts": [
+        "inventory-service-01",
+        "inventory-service-03"
+      ],
+      "sample_message": "SSL connection has been closed unexpectedly by postgres-replica",
+      "root_cause": null
+    },
+    {
+      "fingerprint": "could not connect to server: connection refused (host=<host> port=<n>)",
+      "service": "inventory-service",
+      "count": 4,
+      "first_seen": "2026-06-03T17:33:12.529000+00:00",
+      "last_seen": "2026-06-03T17:35:25.637000+00:00",
+      "duration_seconds": 133.108,
+      "affected_hosts": [
+        "inventory-service-02",
+        "inventory-service-01",
+        "inventory-service-03"
+      ],
+      "sample_message": "could not connect to server: Connection refused (host=postgres-primary port=5432)",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "PostgreSQL primary is unreachable \u2014 pod or TCP listener is down.",
+        "runbook": "runbook/db-connection-refused.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "oomkilled: container exceeded memory limit of 512mi",
+      "service": "payment-service",
+      "count": 3,
+      "first_seen": "2026-06-03T17:32:19.496000+00:00",
+      "last_seen": "2026-06-03T17:32:22.496000+00:00",
+      "duration_seconds": 3.0,
+      "affected_hosts": [
+        "payment-service-02",
+        "payment-service-01"
+      ],
+      "sample_message": "OOMKilled: container exceeded memory limit of 512Mi",
+      "root_cause": {
+        "category": "MEMORY",
+        "description": "Container OOM \u2014 increase memory limits or investigate heap leak.",
+        "runbook": "runbook/oom.md",
+        "confidence": "HIGH"
+      }
+    },
+    {
+      "fingerprint": "error: relation 'sessions' does not exist",
+      "service": "payment-service",
+      "count": 2,
+      "first_seen": "2026-06-03T17:33:11.629000+00:00",
+      "last_seen": "2026-06-03T17:35:26.237000+00:00",
+      "duration_seconds": 134.608,
+      "affected_hosts": [
+        "payment-service-02",
+        "payment-service-03"
+      ],
+      "sample_message": "ERROR: relation 'sessions' does not exist",
+      "root_cause": null
+    },
+    {
+      "fingerprint": "ssl connection has been closed unexpectedly by postgres-replica",
+      "service": "payment-service",
+      "count": 2,
+      "first_seen": "2026-06-03T17:33:52.891000+00:00",
+      "last_seen": "2026-06-03T17:34:37.129000+00:00",
+      "duration_seconds": 44.238,
+      "affected_hosts": [
+        "payment-service-02"
+      ],
+      "sample_message": "SSL connection has been closed unexpectedly by postgres-replica",
+      "root_cause": null
+    },
+    {
+      "fingerprint": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "service": "inventory-service",
+      "count": 2,
+      "first_seen": "2026-06-03T17:34:36.229000+00:00",
+      "last_seen": "2026-06-03T17:34:38.029000+00:00",
+      "duration_seconds": 1.8,
+      "affected_hosts": [
+        "inventory-service-02"
+      ],
+      "sample_message": "deadlock detected on table 'orders' \u2014 transaction rolled back",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Transaction deadlock \u2014 review query order and add retry logic.",
+        "runbook": "runbook/db-deadlock.md",
+        "confidence": "MEDIUM"
+      }
+    },
+    {
+      "fingerprint": "too many connections \u2014 max_connections=<n> reached",
+      "service": "user-service",
+      "count": 2,
+      "first_seen": "2026-06-03T17:35:29.237000+00:00",
+      "last_seen": "2026-06-03T17:35:29.537000+00:00",
+      "duration_seconds": 0.3,
+      "affected_hosts": [
+        "user-service-03",
+        "user-service-02"
+      ],
+      "sample_message": "too many connections \u2014 max_connections=100 reached",
+      "root_cause": {
+        "category": "DATABASE",
+        "description": "Connection pool exhausted \u2014 services are leaking connections or pool is undersized.",
+        "runbook": "runbook/db-connection-pool.md",
+        "confidence": "HIGH"
+      }
+    }
+  ],
+  "anomalies": [],
+  "alerts": [],
+  "timeline": [
+    {
+      "window": "2026-06-03T17:30:00+00:00",
+      "total": 78,
+      "errors": 0
+    },
+    {
+      "window": "2026-06-03T17:31:00+00:00",
+      "total": 221,
+      "errors": 0
+    },
+    {
+      "window": "2026-06-03T17:32:00+00:00",
+      "total": 78,
+      "errors": 17
+    },
+    {
+      "window": "2026-06-03T17:33:00+00:00",
+      "total": 25,
+      "errors": 25
+    },
+    {
+      "window": "2026-06-03T17:34:00+00:00",
+      "total": 23,
+      "errors": 23
+    },
+    {
+      "window": "2026-06-03T17:35:00+00:00",
+      "total": 20,
+      "errors": 20
+    }
+  ]
+}
