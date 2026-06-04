@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+  <defs>
+    <marker id="m-gray"   markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#6e7681"/></marker>
+    <marker id="m-green"  markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#3fb950"/></marker>
+    <marker id="m-purple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#bc8cff"/></marker>
+    <marker id="m-red"    markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#f85149"/></marker>
+    <marker id="m-yellow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#d29922"/></marker>
+    <marker id="m-blue"   markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#58a6ff"/></marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="500" fill="#0d1117"/>
+
+  <!-- Title -->
+  <text x="450" y="36" fill="#e6edf3" font-family="Courier New,monospace" font-size="22" font-weight="bold" text-anchor="middle">PulseWatch</text>
+  <text x="450" y="56" fill="#7d8590" font-family="Courier New,monospace" font-size="11" text-anchor="middle">Log Analysis  ·  Anomaly Detection  ·  Incident Alerts</text>
+
+  <!-- Column separators -->
+  <line x1="285" y1="68" x2="285" y2="478" stroke="#21262d" stroke-width="1.5"/>
+  <line x1="625" y1="68" x2="625" y2="478" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- Section labels -->
+  <text x="142" y="82" fill="#484f58" font-family="Courier New,monospace" font-size="9" text-anchor="middle" letter-spacing="1.5">INPUT SOURCES</text>
+  <text x="455" y="82" fill="#484f58" font-family="Courier New,monospace" font-size="9" text-anchor="middle" letter-spacing="1.5">ANALYSIS ENGINE</text>
+  <text x="762" y="82" fill="#484f58" font-family="Courier New,monospace" font-size="9" text-anchor="middle" letter-spacing="1.5">OUTPUTS</text>
+
+  <!-- ─── INPUT SOURCES ─── -->
+
+  <!-- Simulator -->
+  <rect x="18" y="98" width="242" height="82" rx="6" fill="#161b22" stroke="#1f6feb" stroke-width="1.5"/>
+  <text x="139" y="120" fill="#58a6ff" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">Log Simulator</text>
+  <text x="139" y="139" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">api-gateway · auth-service · payment-service</text>
+  <text x="139" y="154" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">inventory-service · notification-service</text>
+  <text x="139" y="169" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">user-service</text>
+
+  <!-- Log File -->
+  <rect x="18" y="200" width="242" height="52" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="139" y="221" fill="#c9d1d9" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">Log File</text>
+  <text x="139" y="241" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">JSON  /  Nginx combined format</text>
+
+  <!-- stdin -->
+  <rect x="18" y="272" width="242" height="52" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="139" y="293" fill="#c9d1d9" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">stdin  |  pipe</text>
+  <text x="139" y="313" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">real-time  /  batch</text>
+
+  <!-- ─── ANALYSIS ENGINE ─── -->
+
+  <!-- Parser -->
+  <rect x="310" y="98" width="220" height="60" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="420" y="121" fill="#3fb950" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">Parser</text>
+  <text x="420" y="142" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">JSON  /  Nginx  →  LogEntry</text>
+
+  <!-- LogAnalyzer -->
+  <rect x="310" y="188" width="220" height="152" rx="6" fill="#161b22" stroke="#bc8cff" stroke-width="1.5"/>
+  <text x="420" y="210" fill="#bc8cff" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">LogAnalyzer</text>
+  <text x="320" y="231" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Error Fingerprinting</text>
+  <text x="320" y="250" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Error Grouping</text>
+  <text x="320" y="269" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Root Cause Heuristics</text>
+  <text x="320" y="288" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Incident Timeline</text>
+  <text x="320" y="307" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Top Failing Services</text>
+  <text x="320" y="326" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Error Rate per Minute</text>
+
+  <!-- AnomalyDetector -->
+  <rect x="310" y="368" width="220" height="78" rx="6" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+  <text x="420" y="392" fill="#d29922" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">AnomalyDetector</text>
+  <text x="320" y="413" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Z-Score Spike Detection</text>
+  <text x="320" y="432" fill="#484f58" font-family="Courier New,monospace" font-size="8.5">  ▸  Rolling Window  ( 10 min )</text>
+
+  <!-- ─── OUTPUTS ─── -->
+
+  <!-- Rich Dashboard -->
+  <rect x="645" y="98" width="238" height="60" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+  <text x="764" y="121" fill="#3fb950" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">Rich Dashboard</text>
+  <text x="764" y="142" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">Terminal CLI  ·  click  ·  Rich</text>
+
+  <!-- Slack -->
+  <rect x="645" y="178" width="238" height="60" rx="6" fill="#161b22" stroke="#f85149" stroke-width="1.5"/>
+  <text x="764" y="201" fill="#f85149" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">Slack Webhook</text>
+  <text x="764" y="222" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">severity-coloured  ·  fire-and-forget</text>
+
+  <!-- PagerDuty -->
+  <rect x="645" y="258" width="238" height="60" rx="6" fill="#161b22" stroke="#f85149" stroke-width="1.5"/>
+  <text x="764" y="281" fill="#f85149" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">PagerDuty</text>
+  <text x="764" y="302" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">Events API v2  ·  HIGH+ alerts</text>
+
+  <!-- JSON Report -->
+  <rect x="645" y="338" width="238" height="60" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="764" y="361" fill="#58a6ff" font-family="Courier New,monospace" font-size="11" font-weight="bold" text-anchor="middle">JSON Report</text>
+  <text x="764" y="382" fill="#484f58" font-family="Courier New,monospace" font-size="8.5" text-anchor="middle">export  ·  archival</text>
+
+  <!-- ─── ARROWS ─── -->
+
+  <!-- Source → Parser: vertical bus at x=268 -->
+  <line x1="260" y1="139" x2="268" y2="139" stroke="#484f58" stroke-width="1.2"/>
+  <line x1="260" y1="226" x2="268" y2="226" stroke="#484f58" stroke-width="1.2"/>
+  <line x1="260" y1="298" x2="268" y2="298" stroke="#484f58" stroke-width="1.2"/>
+  <line x1="268" y1="128" x2="268" y2="298" stroke="#484f58" stroke-width="1.2"/>
+  <line x1="268" y1="128" x2="310" y2="128" stroke="#484f58" stroke-width="1.2" marker-end="url(#m-gray)"/>
+
+  <!-- Parser → LogAnalyzer -->
+  <line x1="420" y1="158" x2="420" y2="188" stroke="#3fb950" stroke-width="1.5" marker-end="url(#m-green)"/>
+
+  <!-- LogAnalyzer → AnomalyDetector -->
+  <line x1="420" y1="340" x2="420" y2="368" stroke="#bc8cff" stroke-width="1.5" marker-end="url(#m-purple)"/>
+
+  <!-- LogAnalyzer → Rich Dashboard -->
+  <path d="M 530,215 C 587,215 587,128 645,128" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#m-green)"/>
+
+  <!-- LogAnalyzer → Slack -->
+  <path d="M 530,250 C 587,250 587,208 645,208" fill="none" stroke="#f85149" stroke-width="1.5" marker-end="url(#m-red)"/>
+
+  <!-- LogAnalyzer → JSON Report -->
+  <path d="M 530,300 C 587,300 587,368 645,368" fill="none" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#m-blue)"/>
+
+  <!-- AnomalyDetector → PagerDuty -->
+  <path d="M 530,407 C 587,407 587,288 645,288" fill="none" stroke="#d29922" stroke-width="1.5" marker-end="url(#m-yellow)"/>
+
+  <!-- Footer -->
+  <text x="450" y="472" fill="#30363d" font-family="Courier New,monospace" font-size="9" text-anchor="middle">Python  ·  Click  ·  Rich  ·  PyYAML  ·  requests</text>
+</svg>
