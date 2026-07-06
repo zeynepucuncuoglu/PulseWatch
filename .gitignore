@@ -54,6 +54,9 @@ logs/*.log          # log dosyaları commit'lenmesin
 !logs/.gitkeep      # ama klasör yapısı kalsın
 *.log
 
+# ── Personal notes ────────────────────────────────────────────────────────────
+mulakat_notlari.txt
+
 # ── OS ────────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
